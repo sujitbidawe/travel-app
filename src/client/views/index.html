@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
-        <title>Test</title>
+        <title>Travel App</title>
         <link rel="stylesheet" href="/styles/resets.scss" type="scss">
         <link rel="stylesheet" href="/styles/base.scss" type="scss">
         <link rel="stylesheet" href="/styles/header.scss" type="scss">
@@ -14,14 +14,17 @@
 
         <header>
             <div>
-                SENTIMENTAL ANALYSIS
+                TRAVEL APP
             </div>
         </header>
 
         <main>
             <section>
                 <form class="" onsubmit="return Client.handleSubmit(event)">
-                    <input id="name" type="text" name="input" value=""  placeholder="Enter Text Here">
+                    <label for="name">Travelling To:</label>
+                    <input id="name" type="text" name="input" value="" placeholder="Enter City Here">
+                    <label for="date">Travel Date:</label>
+                    <input type="date" id="date" name="date" value="" max="2022-01-15" min="2022-01-01">
                     <span id="error" class="error"></span>
                     <input type="submit" name="" value="Analyze Text" onclick="return Client.handleSubmit(event)" onsubmit="return handleSubmit(event)" class="button">
                 </form>
@@ -39,7 +42,7 @@
         </main>
 
         <footer>
-            <p>This is a footer</p>
+            <p>I'm a Travel App</p>
         </footer>
 
         <script>

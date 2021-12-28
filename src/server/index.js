@@ -60,3 +60,11 @@ app.get('/all', function (req, res) {
 });
 
 app.post('/adddata', addData);
+
+app.get('/getgeonamesuser', function (req, res) {
+    let payloadObj = {
+        username: process.env.GEONAMES_USERNAME,
+        city: ""
+    }
+    res.send(payloadObj);
+})

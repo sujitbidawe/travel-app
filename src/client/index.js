@@ -1,5 +1,5 @@
 import { handleSubmit } from './js/formHandler'
-import { analyzeDataFn } from './js/analyzeData'
+import { getCoordinates } from './js/findCoordinates'
 import { addData } from './js/addDataToServer'
 import { getData } from './js/displayData'
 
@@ -13,7 +13,7 @@ alert("I EXIST")
 
 export {
     handleSubmit,
-    analyzeDataFn,
+    getCoordinates,
     addData,
     getData
 }
