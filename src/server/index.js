@@ -68,3 +68,10 @@ app.get('/getgeonamesuser', function (req, res) {
     }
     res.send(payloadObj);
 })
+
+app.get('/getweatherbitKey', function (req, res) {
+    const obj = {
+        key: process.env.WEATHERBIT_KEY
+    }
+    res.send(obj);
+})

@@ -1,14 +1,18 @@
 function getCoordinates(payloadObj) {
     
     fetchCoordinates(payloadObj).then(function(resData={}) {
-        // const data = {
-        //     'agreement'     : resData.agreement,
-        //     'confidence'    : resData.confidence,
-        //     'irony'         : resData.irony,
-        //     'subjectivity'  : resData.subjectivity
-        // }
-        // Client.addData(data);
-        // return data;
+        if (!resData.geonames.length) {
+            document.getElementById('common-error').innerHTML = "Oops! City not found!";
+            return;
+        } else {
+            document.getElementById('common-error').innerHTML = "";
+        }
+        const weatherPayloadObj = {
+            latitude: resData.geonames[0].lat,
+            longitude: resData.geonames[0].lng,
+            date: document.getElementById('date').value
+        }
+        Client.getWeather(weatherPayloadObj);
     })
 }
 
