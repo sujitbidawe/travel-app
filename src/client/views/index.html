@@ -23,10 +23,12 @@
                 <form class="" onsubmit="return Client.handleSubmit(event)">
                     <label for="name">Travelling To:</label>
                     <input id="name" type="text" name="input" value="" placeholder="Enter City Here">
+                    <span id="city-error" class="error"></span>
                     <label for="date">Travel Date:</label>
-                    <input type="date" id="date" name="date" value="" max="2022-01-15" min="2022-01-01">
-                    <span id="error" class="error"></span>
-                    <input type="submit" name="" value="Analyze Text" onclick="return Client.handleSubmit(event)" onsubmit="return handleSubmit(event)" class="button">
+                    <input type="date" id="date" name="date" value="">
+                    <span id="date-error" class="error"></span>
+                    <span id="common-error" class="error"></span>
+                    <input type="submit" name="" value="Vacayyy!" onclick="return Client.handleSubmit(event)" onsubmit="return handleSubmit(event)" class="button">
                 </form>
             <section>
 
@@ -46,11 +48,16 @@
         </footer>
 
         <script>
+            window.addEventListener('load', () => {
+                // For setting up min max dates since API returns forecasted data of weather only upto 16 days
+                Client.evaluateDate();
+            });
             // Check that service workers are supported
             if ('serviceWorker' in navigator) {
                 // Use the window load event to keep the page load performant
                 window.addEventListener('load', () => {
                     navigator.serviceWorker.register('/service-worker.js');
+                    Client.evaluateDate();
                 });
             }
         </script>
