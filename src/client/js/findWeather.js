@@ -7,10 +7,10 @@ function getWeather(payloadObj) {
     const sevenDays = 7;
 
     fetchKey().then(function(resData={}) {
-        payloadObj = {...payloadObj, ...resData}
+        payloadObj = {...payloadObj, ...resData};
         if (dayDifference <= sevenDays) {
             fetchCurrentWeather(payloadObj).then(function(resData={}) {
-                const data = resData;
+                Client.getImage(resData);
             })
         } else {
             const days = {
@@ -18,7 +18,7 @@ function getWeather(payloadObj) {
             }
             payloadObj = {...payloadObj, ...days}
             fetchFutureWeather(payloadObj).then(function(resData={}) {
-                const data = resData;
+                Client.getImage(resData);
             })
         }
     })

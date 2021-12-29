@@ -75,3 +75,20 @@ app.get('/getweatherbitKey', function (req, res) {
     }
     res.send(obj);
 })
+
+app.get('/getpixabayKey', function (req, res) {
+    const obj = {
+        key: process.env.PIXABAY_KEY
+    }
+    res.send(obj);
+})
+
+app.post('/getcountryname', getCountryName);
+
+function getCountryName(req, res) {
+    const obj = {
+        country: mockAPIResponse[req.body.code]
+    }
+    res.json(obj);
+    res.send(obj);
+}
