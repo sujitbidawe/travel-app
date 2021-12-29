@@ -25,7 +25,6 @@ const getDataFromServer = async ( url = '', data = {}) => {
     });
     try {
         const allData = await response.json();
-        console.log(allData);
         return allData;
     } catch (error) {
         console.log("error", error);
