@@ -19,7 +19,12 @@ const fetchImage = async (reqData = {},) => {
         const res = await fetch(`https://pixabay.com/api/?key=${reqData.key}&q=${searchQuery}&image_type=photo`, reqData);
         try {
             let response = await res.json();
-            return response.hits[0];
+            if (response.hits.length) {
+                return response.hits[0];
+            } else {
+                const payload = {...resData, ...reqData, city_name: resData.country}
+                fetchImage(payload);
+            }
         }
         catch(error) {
             console.log("error", error);
