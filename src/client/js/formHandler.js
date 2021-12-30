@@ -3,8 +3,8 @@ function handleSubmit(event) {
 
     fetch('http://localhost:8081/removepreviouscard');
     
-    let section = document.getElementById("card");
-    section.innerHTML = "";
+    let div = document.getElementById("travel-card");
+    div.innerHTML = "";
     
     let city = document.getElementById('name').value;
     let date = document.getElementById('date').value;

@@ -27,8 +27,8 @@ function updateUI(data){
     }
     docFragment.appendChild(div1);
     docFragment.appendChild(div2);
-    let section = document.getElementById("card");
-    section.appendChild(docFragment);
+    let div = document.getElementById("travel-card");
+    div.appendChild(docFragment);
     
 }
 
