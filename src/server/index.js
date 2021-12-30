@@ -12,7 +12,7 @@ var json = {
     'time': 'now'
 }
 
-let projectData = {};
+let travelData = {};
 
 const app = express()
 app.use(cors())
@@ -47,15 +47,17 @@ app.get('/generateformdata', function (req, res) {
 })
 
 function addData(req, res) {
-    projectData['agreement'] = req.body.agreement;
-    projectData['confidence'] = req.body.confidence;
-    projectData['irony'] = req.body.irony;
-    projectData['subjectivity'] = req.body.subjectivity;
-    res.send(projectData);
+    for (var key in req.body) {
+        if (req.body.hasOwnProperty(key)) {
+            travelData[key] = req.body[key];
+        }
+    }
+    res.json(travelData);
+    res.send(travelData);
 }
 
 app.get('/all', function (req, res) {
-    res.send(projectData);
+    res.send(travelData);
 });
 
 app.post('/adddata', addData);
