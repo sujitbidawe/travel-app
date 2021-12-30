@@ -1,7 +1,9 @@
 function addData(dataObj) {
     
     postDataToServer("http://localhost:8081/adddata", dataObj).then((data) => {
-        Client.getData(data);
+        if (dataObj.imageURL) {
+            Client.getData(data);
+        }
     })
 }
 
