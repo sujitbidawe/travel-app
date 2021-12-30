@@ -21,4 +21,44 @@ section {
     section{
         max-width: 80%;
     }
+
+    &#card{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        #travel-card{
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+            justify-content: center;
+            max-width: 440px;
+            box-shadow: 0px 0px 20px #323232;
+            div{
+                display: flex;
+                flex-direction: column;
+                span{
+                    margin: 5px 0 5px 0;
+                }
+                img{
+                    max-width: 300px;
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    section {
+        &#card{
+            #travel-card{
+                max-width: 300px;
+                div{
+                    img{
+                        max-width: 220px;
+                    }
+                }
+            }
+        }
+    }            
 }
