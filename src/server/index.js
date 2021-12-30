@@ -93,3 +93,8 @@ function getCountryName(req, res) {
     res.json(obj);
     res.send(obj);
 }
+
+app.get('/removepreviouscard', function (req, res) {
+    travelData = {};
+    res.send();
+})

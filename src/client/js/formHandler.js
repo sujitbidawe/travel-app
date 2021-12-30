@@ -1,7 +1,11 @@
 function handleSubmit(event) {
     event.preventDefault()
 
-    // check what text was put into the form fields
+    fetch('http://localhost:8081/removepreviouscard');
+    
+    let section = document.getElementById("card");
+    section.innerHTML = "";
+    
     let city = document.getElementById('name').value;
     let date = document.getElementById('date').value;
     if (city.length) {
