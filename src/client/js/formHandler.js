@@ -21,6 +21,8 @@ function handleSubmit(event) {
         document.getElementById('date-error').innerHTML = "Please enter a date to proceed further.";
         return;
     }
+
+    Client.addData({city: city, date: date});
     
     fetch('http://localhost:8081/getgeonamesuser')
     .then(res => {

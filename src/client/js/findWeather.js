@@ -10,6 +10,7 @@ function getWeather(payloadObj) {
         payloadObj = {...payloadObj, ...resData};
         if (dayDifference <= sevenDays) {
             fetchCurrentWeather(payloadObj).then(function(resData={}) {
+                Client.addData({weather: resData.weather.description});
                 Client.getImage(resData);
             })
         } else {
@@ -18,6 +19,7 @@ function getWeather(payloadObj) {
             }
             payloadObj = {...payloadObj, ...days}
             fetchFutureWeather(payloadObj).then(function(resData={}) {
+                Client.addData({weather: resData.weather.description});
                 Client.getImage(resData);
             })
         }

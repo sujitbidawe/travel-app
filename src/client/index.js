@@ -1,10 +1,10 @@
+import { evaluateDate } from './js/setDateConditions';
 import { handleSubmit } from './js/formHandler';
 import { getCoordinates } from './js/findCoordinates';
-import { addData } from './js/addDataToServer';
-import { getData } from './js/displayData';
 import { getWeather } from './js/findWeather';
-import { evaluateDate } from './js/setDateConditions';
 import { getImage } from './js/findImage';
+import { addData } from './js/addDataToServer';
+import { getData } from './js/getDataFromServer';
 
 import './styles/resets.scss';
 import './styles/base.scss';
@@ -13,11 +13,11 @@ import './styles/footer.scss';
 import './styles/header.scss';
 
 export {
+    evaluateDate,
     handleSubmit,
     getCoordinates,
+    getWeather,
+    getImage,
     addData,
     getData,
-    getWeather,
-    evaluateDate,
-    getImage
 }

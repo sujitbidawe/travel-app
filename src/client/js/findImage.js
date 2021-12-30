@@ -20,6 +20,7 @@ const fetchImage = async (reqData = {},) => {
         try {
             let response = await res.json();
             if (response.hits.length) {
+                Client.addData({imageURL: response.hits[0].webformatURL});
                 return response.hits[0];
             } else {
                 const payload = {...resData, ...reqData, city_name: resData.country}

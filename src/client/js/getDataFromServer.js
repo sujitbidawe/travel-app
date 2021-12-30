@@ -1,16 +1,7 @@
 function getData() {
     
-    getDataFromServer("http://localhost:8081/all").then((data) => {
-        updateUI(data);
-    })
+    getDataFromServer("http://localhost:8081/all");
 
-}
-
-function updateUI(data){
-    document.getElementById('res1').innerHTML = data.agreement;
-    document.getElementById('res2').innerHTML = data.confidence;
-    document.getElementById('res3').innerHTML = data.irony;
-    document.getElementById('res4').innerHTML = data.subjectivity;   
 }
 
 // Function to get data from server
