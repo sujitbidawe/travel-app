@@ -2,6 +2,12 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background: rgb(136,203,171);
+    background: linear-gradient(180deg, rgb(236, 234, 104) 0%, rgb(114, 125, 136) 100%);
+    margin: 0;
+    font-family: 'Merriweather', serif;
+    color: #323232;
+    font-weight: 700;
 }
 
 main {
